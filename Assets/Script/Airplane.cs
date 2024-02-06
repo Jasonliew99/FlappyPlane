@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Airplane : MonoBehaviour
 {
     public float UpwardForce = 200.00f;
     public int INTERGER = 2;

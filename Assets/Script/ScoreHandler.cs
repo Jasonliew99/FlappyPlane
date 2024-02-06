@@ -1,28 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class scorebox : MonoBehaviour
+public class ScoreHandler : MonoBehaviour
 {
-    public int ScoreAmount = 10;
-
+    public TMP_Text ScoreUI;
     private ScoreManager _scoreManager;
+
     // Start is called before the first frame update
     void Start()
     {
         _scoreManager = FindObjectOfType<ScoreManager>();
+        ScoreUI = GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
-    void OnTriggerEnter2D(Collider2D col)
+    void Update()
     {
         if (_scoreManager == null)
             return;
 
-        if (!col.gameObject.CompareTag("Player"))
+        if (ScoreUI == null)
             return;
 
-        _scoreManager.AddScore(ScoreAmount);
-        //Debug.Log("Current Score = "
+        ScoreUI.text = "Score: " + _scoreManager.CurrentScore.ToString();
     }
 }
