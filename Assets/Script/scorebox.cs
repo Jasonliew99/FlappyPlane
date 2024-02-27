@@ -16,13 +16,21 @@ public class scorebox : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (_scoreManager == null)
-            return;
+        //Debug.Log("Collission happen");
 
-        if (!col.gameObject.CompareTag("Player"))
+        if (_scoreManager == null)
+        {
+            //Debug.Log("no ScoreManager");
+
             return;
+        }
+        if (!col.gameObject.CompareTag("Player"))
+        {
+            //Debug.Log("not player");
+            return;
+        }
 
         _scoreManager.AddScore(ScoreAmount);
-        //Debug.Log("Current Score = "
+        //Debug.Log("Current Score");
     }
 }

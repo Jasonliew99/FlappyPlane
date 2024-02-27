@@ -26,7 +26,7 @@ public class Airplane : MonoBehaviour
         {
             _rigidbody.velocity = Vector2.zero;
             _rigidbody.AddForce(Vector2.up * UpwardForce);
-            Debug.Log("He should flap upawrds");
+            //Debug.Log("He should flap upawrds");
         }
     }
 }
